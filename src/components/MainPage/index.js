@@ -4,16 +4,36 @@ import OpenBlock from './OpenBlock';
 import SecondBlock from './SecondBlock';
 import Footer from './Footer';
 
-const MainPage = (props) => {
-  const clientHeight = document.documentElement.clientHeight;
+class MainPage extends React.PureComponent {
+  state = {
+    clientHeight: document.documentElement.clientHeight,
+    yOffset: 0,
+  }
 
-  return (
-    <>
-      <OpenBlock clientHeight={clientHeight} />
-      <SecondBlock clientHeight={clientHeight} />
-      <Footer />
-    </>
-  );
-}
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll = () => {
+    const newYOffset = window.pageYOffset;
+    this.setState({
+      yOffset: newYOffset,
+    });
+  }
+
+  render() {
+    return (
+      <>
+        <OpenBlock clientHeight={this.state.clientHeight} />
+        <SecondBlock clientHeight={this.state.clientHeight} yOffset={this.state.yOffset} />
+        {/* <Footer /> */}
+      </>
+    );
+  }
+};
 
 export default MainPage;

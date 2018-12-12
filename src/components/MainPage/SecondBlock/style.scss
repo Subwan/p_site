@@ -1,12 +1,33 @@
+$header-width: 5vh;
+$block-rotate-angle: 12deg;
+
 .second-block__container {
   position: relative;
+  margin-top: $header-width;
+
+  .second-block__header {
+    position: absolute;
+    transform-origin: 0 0;
+    transform: rotate($block-rotate-angle);
+    width: 120%;
+    height: $header-width;
+    top: -$header-width * 0.9;
+
+    .second-block__header-text {
+      position: absolute;
+      font-size: $header-width;
+      line-height: 0.9;
+      top: 0;
+      left: 0;
+    }
+  }
 
   .second-block__triangle {
     position: absolute;
     width: 120%;
     background-color: #000000;
     transform-origin: 0 0;
-    transform: rotate(12deg);
+    transform: rotate($block-rotate-angle);
   }
   
   .second-block__text-block {

@@ -1,0 +1,67 @@
+
+@font-face {
+  font-family: 'Playfair Display SC';
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local('Playfair Display SC'),
+    local('PlayfairDisplaySC-Regular'),
+    url(./assets/fonts/PlayfairDisplaySC/PlayfairDisplaySC-Regular.ttf) format('truetype'),
+}
+
+@font-face {
+  font-family: 'Playfair Display SC';
+  font-style: normal;
+  font-weight: 700;
+  src:
+    local('Playfair Display SC Bold'),
+    local('PlayfairDisplaySC-Bold'),
+    url(./assets/fonts/PlayfairDisplaySC/PlayfairDisplaySC-Bold.ttf) format('truetype'),
+}
+
+@font-face {
+  font-family: 'Playfair Display SC';
+  font-style: italic;
+  font-weight: 400;
+  src:
+    local('Playfair Display SC Italic'),
+    local('PlayfairDisplaySC-Italic'),
+    url(./assets/fonts/PlayfairDisplaySC/PlayfairDisplaySC-Italic.ttf) format('truetype'),
+}
+
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local('Lora'),
+    local('Lora-Regular'),
+    url(./assets/fonts/Lora/Lora-Regular.ttf) format('truetype'),
+}
+
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  src:
+    local('Lora'),
+    local('Lora-Bold'),
+    url(./assets/fonts/Lora/Lora-Bold.ttf) format('truetype'),
+}
+
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  src:
+    local('Lora'),
+    local('Lora-Italic'),
+    url(./assets/fonts/Lora/Lora-Italic.ttf) format('truetype'),
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Playfair Display SC', serif;
+}

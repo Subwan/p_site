@@ -1,0 +1,1 @@
+export const TN_12 = 0.2125;

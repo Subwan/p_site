@@ -1,0 +1,26 @@
+.second-block__container {
+  position: relative;
+
+  .second-block__triangle {
+    position: absolute;
+    width: 120%;
+    background-color: #000000;
+    transform-origin: 0 0;
+    transform: rotate(12deg);
+  }
+  
+  .second-block__text-block {
+    position: absolute;
+    width: 100%;
+    background: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    color: #ffffff;
+  }
+}
+
+
+

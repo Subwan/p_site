@@ -1,0 +1,23 @@
+.section-of-wisdom__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .section-of-wisdom__item {
+    width: 10vw;
+    height: 15vw;
+    background-color: black;
+    margin: 0 10px;
+    // -o-transform: scale(1.1); для увеличения
+  }
+
+  .section-of-wisdom__item_transform {
+    transition: transform 1s ease-out;
+  }
+
+  .section-of-wisdom__second-item {
+    opacity: 0;
+    transform: scale(0.7);
+    transition: opacity 1s ease-out, transform 500ms ease-out;
+  }
+}

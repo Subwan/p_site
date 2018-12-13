@@ -1,7 +1,8 @@
 import React from 'react';
 
-import { ANGLE } from '../../../constants/triangle';
+import { ANGLE } from '../../../constants/styling';
 import SectionOfPower from './SectionOfPower';
+import SectionOfWisdom from './SectionOfWisdom';
 
 import './style.scss';
 
@@ -42,6 +43,11 @@ class MainSection extends React.PureComponent {
           clientWidth={this.clientWidth}
           yOffset={this.state.yOffset}
           marginTop={this.marginTop}
+        />
+        <SectionOfWisdom
+          clientHeight={this.props.clientHeight}
+          clientWidth={this.clientWidth}
+          yOffset={this.state.yOffset}
         />
       </>
     );

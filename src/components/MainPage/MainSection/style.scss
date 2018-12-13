@@ -9,7 +9,7 @@ $block-rotate-angle: 12deg;
     position: absolute;
     transform-origin: 0 0;
     transform: rotate($block-rotate-angle);
-    width: 120%;
+    width: 100%;
     height: $header-width;
     top: -$header-width * 0.9;
 
@@ -19,6 +19,12 @@ $block-rotate-angle: 12deg;
       line-height: 0.9;
       top: 0;
       left: 0;
+      z-index: 10;
+      animation: move-right 10s forwards paused linear;
+    }
+
+    .section-of-power__header-text_animate {
+      animation-play-state: running;
     }
   }
 
@@ -43,5 +49,38 @@ $block-rotate-angle: 12deg;
   }
 }
 
+@-webkit-keyframes move-right {
+  from {
+    left: 0;
+  }
+  to {
+    left: 100%;
+  }
+}
+@keyframes move-right {
+  from {
+    left: 0;
+  }
+  to {
+    left: 92%;
+  }
+}
 
-
+@media screen and (max-width:720px) {
+  @-webkit-keyframes move-right {
+    from {
+      left: 0;
+    }
+    to {
+      left: 100%;
+    }
+  }
+  @keyframes move-right {
+    from {
+      left: 0;
+    }
+    to {
+      left: 65%;
+    }
+  }
+}

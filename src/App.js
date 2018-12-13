@@ -5,7 +5,7 @@ import './App.scss';
 
 const App = (props) => {
   return (
-    <div>
+    <div className="app__container">
       <MainPage />
     </div>
   );

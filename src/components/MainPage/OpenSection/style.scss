@@ -15,16 +15,16 @@
 .open-block__text {  
   animation: blink 4000ms alternate infinite;
   position: absolute;
-  font-size: 60px;
+  font-size: 7vw;
 }
 
 @keyframes blink {
-from {
-  opacity: 1;
-}
-to {
-  opacity: 0;
-}
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 

@@ -1,11 +1,11 @@
 $header-width: 5vh;
 $block-rotate-angle: 12deg;
 
-.second-block__container {
+.section-of-power__container {
   position: relative;
   margin-top: $header-width;
 
-  .second-block__header {
+  .section-of-power__header {
     position: absolute;
     transform-origin: 0 0;
     transform: rotate($block-rotate-angle);
@@ -13,7 +13,7 @@ $block-rotate-angle: 12deg;
     height: $header-width;
     top: -$header-width * 0.9;
 
-    .second-block__header-text {
+    .section-of-power__header-text {
       position: absolute;
       font-size: $header-width;
       line-height: 0.9;
@@ -22,7 +22,7 @@ $block-rotate-angle: 12deg;
     }
   }
 
-  .second-block__triangle {
+  .section-of-power__triangle {
     position: absolute;
     width: 120%;
     background-color: #000000;
@@ -30,7 +30,7 @@ $block-rotate-angle: 12deg;
     transform: rotate($block-rotate-angle);
   }
   
-  .second-block__text-block {
+  .section-of-power__text-block {
     position: absolute;
     width: 100%;
     background: #000000;

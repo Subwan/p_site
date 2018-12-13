@@ -1,1 +1,1 @@
-export const TN_12 = 0.2125;
+export const ANGLE = 12;

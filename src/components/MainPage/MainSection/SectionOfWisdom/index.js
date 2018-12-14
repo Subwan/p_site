@@ -23,8 +23,7 @@ class SectionOfWisdom extends React.PureComponent {
   componentDidMount() {
     const pixelWidth = (this.props.clientWidth * ITEM_OF_WISDOM_WIDTH) / 100;
     const pixelToMove = pixelWidth + this.firstItemRef.current.getBoundingClientRect().left + 10;
-    const shouldAnimate = this.props.yOffset > this.props.clientHeight * 1.8
-      && this.props.clientWidth > MEDIA_WIDTH;
+    const shouldAnimate = this.props.clientWidth > MEDIA_WIDTH;
 
     if (shouldAnimate) {
       this.firstItemRef.current.style.transform = `translateX(${-pixelToMove}px)`;

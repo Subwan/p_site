@@ -5,30 +5,40 @@ import {
   SECTION_OF_POWER_HEADER_TEXT,
 } from '../../../../constants/text';
 
-const SectionOfPower = (props) => {
+import './style.scss';
 
-  const handleAnimation = () => {
-    return props.yOffset > (props.clientHeight / 2) ? 'section-of-power__header-text_animate' : '';
+class SectionOfPower extends React.PureComponent {
+
+  headerRef = React.createRef()
+
+  handleAnimation = () => {
+    if (this.props.yOffset > (this.props.clientHeight / 2)) {
+      this.headerRef.current.style.webkitAnimationPlayState = "running";
+    }
   }
 
-  return (
-    <div className="section-of-power__container" style={{ height: props.clientHeight }}>
-      <div className="section-of-power__header">
-        <div 
-          className={`section-of-power__header-text ${handleAnimation()}`}
+  render() {
+    this.handleAnimation();
+    return (
+      <div className="section-of-power__container" style={{ height: this.props.clientHeight }}>
+        <div className="section-of-power__header">
+          <div
+            ref={this.headerRef}
+            className="section-of-power__header-text"
+          >
+            {SECTION_OF_POWER_HEADER_TEXT}
+          </div>
+        </div>
+        <div className="section-of-power__triangle" style={{ height: this.props.marginTop }} />
+        <div
+          className="section-of-power__text-block"
+          style={{ top: this.props.marginTop, height: this.props.clientHeight - this.props.marginTop }}
         >
-          {SECTION_OF_POWER_HEADER_TEXT}
+          {SECTION_OF_POWER_TEXT}
         </div>
       </div>
-      <div className="section-of-power__triangle" style={{ height: props.marginTop }} />
-      <div
-        className="section-of-power__text-block"
-        style={{ top: props.marginTop, height: props.clientHeight - props.marginTop }}
-      >
-        {SECTION_OF_POWER_TEXT}
-      </div>
-    </div>
-  )
+    )
+  }
 }
 
 export default SectionOfPower;

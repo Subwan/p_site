@@ -1,5 +1,6 @@
-$header-width: 5vh;
+$header-width: 3vw;
 $block-rotate-angle: 12deg;
+$rightPosition: 75%;
 
 .section-of-power__container {
   position: relative;
@@ -18,13 +19,9 @@ $block-rotate-angle: 12deg;
       font-size: $header-width;
       line-height: 0.9;
       top: 0;
-      left: 0;
+      right: $rightPosition;
       z-index: 10;
       animation: move-right 10s forwards paused linear;
-    }
-
-    .section-of-power__header-text_animate {
-      animation-play-state: running;
     }
   }
 
@@ -51,36 +48,54 @@ $block-rotate-angle: 12deg;
 
 @-webkit-keyframes move-right {
   from {
-    left: 0;
+    right: $rightPosition;
   }
   to {
-    left: 100%;
+    right: 0;
   }
 }
 @keyframes move-right {
   from {
-    left: 0;
+    right: $rightPosition;
   }
   to {
-    left: 92%;
+    right: 0;
   }
 }
 
 @media screen and (max-width:720px) {
+  $header-width: 5vw;
+  $rightPosition: 55%;
+
+  .section-of-power__container {
+    margin-top: $header-width;
+
+    .section-of-power__header {
+      height: $header-width;
+      top: -$header-width * 0.9;
+
+      .section-of-power__header-text {
+        font-size: $header-width;
+        right: $rightPosition;
+      }
+    }
+  }
+
+
   @-webkit-keyframes move-right {
     from {
-      left: 0;
+      right: $rightPosition;
     }
     to {
-      left: 100%;
+      right: 0;
     }
   }
   @keyframes move-right {
     from {
-      left: 0;
+      right: $rightPosition;
     }
     to {
-      left: 65%;
+      right: 0;
     }
   }
 }

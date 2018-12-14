@@ -4,8 +4,6 @@ import { ANGLE } from '../../../constants/styling';
 import SectionOfPower from './SectionOfPower';
 import SectionOfWisdom from './SectionOfWisdom';
 
-import './style.scss';
-
 class MainSection extends React.PureComponent {
   state = {
     yOffset: 0,

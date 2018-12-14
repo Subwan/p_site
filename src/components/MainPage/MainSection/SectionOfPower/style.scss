@@ -1,6 +1,7 @@
 $header-width: 3vw;
 $block-rotate-angle: 12deg;
 $rightPosition: 75%;
+$media-width: 1030px;
 
 .section-of-power__container {
   position: relative;
@@ -63,7 +64,7 @@ $rightPosition: 75%;
   }
 }
 
-@media screen and (max-width:720px) {
+@media screen and (max-width: $media-width) {
   $header-width: 5vw;
   $rightPosition: 55%;
 

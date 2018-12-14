@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ITEM_OF_WISDOM_WIDTH } from '../../../../constants/styling';
+import { ITEM_OF_WISDOM_WIDTH, MEDIA_WIDTH } from '../../../../constants/styling';
 import img2018 from '../../../../assets/images/2018.jpg';
 import img2017 from '../../../../assets/images/2017.jpg';
 import img2016 from '../../../../assets/images/2016.jpg';
@@ -23,8 +23,10 @@ class SectionOfWisdom extends React.PureComponent {
   componentDidMount() {
     const pixelWidth = (this.props.clientWidth * ITEM_OF_WISDOM_WIDTH) / 100;
     const pixelToMove = pixelWidth + this.firstItemRef.current.getBoundingClientRect().left + 10;
+    const shouldAnimate = this.props.yOffset > this.props.clientHeight * 1.8
+      && this.props.clientWidth > MEDIA_WIDTH;
 
-    if (this.props.clientWidth > 500) {
+    if (shouldAnimate) {
       this.firstItemRef.current.style.transform = `translateX(${-pixelToMove}px)`;
       this.thirdItemRef.current.style.transform = `translateX(${pixelToMove}px)`;
     }
@@ -32,7 +34,7 @@ class SectionOfWisdom extends React.PureComponent {
 
   handleScroll = () => {
     const shouldAnimate = this.props.yOffset > this.props.clientHeight * 1.8
-      && this.props.clientWidth > 500;
+      && this.props.clientWidth > MEDIA_WIDTH;
     if (shouldAnimate) {
       this.firstItemRef.current.style.transform = "translateX(0)";
       setTimeout(() => {

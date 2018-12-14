@@ -1,3 +1,5 @@
+$media-width: 1030px;
+
 .section-of-wisdom__container {
   display: flex;
   justify-content: center;
@@ -89,7 +91,7 @@
   }
 }
 
-@media screen and (max-width:720px) {
+@media screen and (max-width: $media-width) {
   .section-of-wisdom__container {
     flex-flow: column nowrap;
     justify-content: space-between;

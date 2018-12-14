@@ -2,7 +2,7 @@ import React from 'react';
 
 import OpenSection from './OpenSection';
 import MainSection from './MainSection';
-// import Footer from './Footer';
+import Footer from './Footer';
 
 const MainPage = (props) => {
   const clientHeight = document.documentElement.clientHeight;
@@ -11,7 +11,7 @@ const MainPage = (props) => {
     <>
       <OpenSection clientHeight={clientHeight} />
       <MainSection clientHeight={clientHeight} />
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };

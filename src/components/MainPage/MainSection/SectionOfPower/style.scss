@@ -41,8 +41,9 @@ $media-width: 1030px;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     font-family: 'Lora', serif;
-    font-size: 20px;
+    font-size: 30px;
     color: #ffffff;
   }
 }
@@ -79,6 +80,10 @@ $media-width: 1030px;
         font-size: $header-width;
         right: $rightPosition;
       }
+    }
+
+    .section-of-power__text-block {
+      font-size: 20px;
     }
   }
 

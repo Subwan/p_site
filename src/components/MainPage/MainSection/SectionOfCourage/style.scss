@@ -1,0 +1,81 @@
+.section-of-courage__container {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  .section-of-courage__item-container {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+  }
+
+  .section-of-courage__item-container_right {
+    justify-content: flex-end;
+  }
+
+  .section-of-courage__item-container_left {
+    justify-content: flex-start;
+  }
+
+  .section-of-coureage__item-button {
+    width: 500px;
+    height: 100px;
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    border: 1vw solid #000000;
+    background-color: #ffffff;
+    margin: 0 10%;
+  }
+  
+  .section-of-coureage__item-button_right-animation {
+    animation: appear-right 400ms forwards paused cubic-bezier(0.175,0.885,0.32,1.275);
+  }
+  
+  .section-of-coureage__item-button_left-animation {
+    animation: appear-left 400ms forwards paused cubic-bezier(0.175,0.885,0.32,1.275);
+  }
+}
+
+@-webkit-keyframes appear-right {
+  from {
+    opacity: 0;
+    transform: translate(30%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes appear-right {
+  from {
+    opacity: 0;
+    transform: translate(30%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@-webkit-keyframes appear-left {
+  from {
+    opacity: 0;
+    transform: translate(-30%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes appear-left {
+  from {
+    opacity: 0;
+    transform: translate(-30%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0);
+  }
+}

@@ -3,6 +3,7 @@ import React from 'react';
 import { ANGLE } from '../../../constants/styling';
 import SectionOfPower from './SectionOfPower';
 import SectionOfWisdom from './SectionOfWisdom';
+import SectionOfCourage from './SectionOfCourage';
 
 class MainSection extends React.PureComponent {
   state = {
@@ -47,6 +48,7 @@ class MainSection extends React.PureComponent {
           clientWidth={this.clientWidth}
           yOffset={this.state.yOffset}
         />
+        <SectionOfCourage />
       </>
     );
   }

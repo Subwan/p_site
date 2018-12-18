@@ -1,5 +1,6 @@
+$media-width: 1030px;
+
 .section-of-courage__container {
-  width: 100%;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -20,7 +21,7 @@
   }
 
   .section-of-coureage__item-button {
-    width: 500px;
+    width: 30%;
     height: 100px;
     font-family: 'Lora', serif;
     font-size: 20px;
@@ -77,5 +78,27 @@
   to {
     opacity: 1;
     transform: translate(0);
+  }
+}
+
+@media screen and (max-width: $media-width) {
+  .section-of-courage__container {
+    .section-of-courage__item-container {
+      height: 200px;
+    }
+    .section-of-courage__item-container_right {
+      justify-content: center;
+    }
+  
+    .section-of-courage__item-container_left {
+      justify-content: center;
+    }
+
+    .section-of-coureage__item-button {
+      width: 50%;
+      border: 2vw solid #000000;
+      font-size: 14px;
+      margin: 0 0;
+    }
   }
 }

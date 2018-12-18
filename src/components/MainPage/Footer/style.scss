@@ -33,6 +33,33 @@ $media-width: 1030px;
   }
 }
 
+@media screen and (min-width: $media-width) {
+  .footer {
+    .footer__container {
+      .footer__vk {
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: 60px;
+          right: 0;
+          width: 5vw;
+          height: 6vw;
+          background-size: cover;
+          background-image: url('../../../assets/images/pdrlk.jpg');
+          transform: translate(100%);
+          transition: transform 100ms ease-out;
+        }
+
+        &:hover {
+          &:after {
+            transform: translate(45%);
+          }
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-width: $media-width) {
   .footer {
     height: 40px;

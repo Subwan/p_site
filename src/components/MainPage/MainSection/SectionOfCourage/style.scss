@@ -4,6 +4,11 @@ $media-width: 1030px;
   padding: 0;
   margin: 0;
   list-style: none;
+  background-image: url('../../../../assets/images/pdrlk.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: 50% 0px;
+  background-size: cover;
 
   .section-of-courage__item-container {
     width: 100%;
@@ -28,6 +33,7 @@ $media-width: 1030px;
     border: 1vw solid #000000;
     background-color: #ffffff;
     margin: 0 10%;
+    cursor: pointer;
   }
   
   .section-of-coureage__item-button_right-animation {

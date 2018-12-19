@@ -13,7 +13,7 @@ const SectionOfCourage = (props) => {
     });
   }
 
-  let options = {
+  const options = {
     threshold: 1,
   };
 
@@ -54,6 +54,14 @@ const SectionOfCourage = (props) => {
     renderRow(item.text, item.position)
   ));
 
+  const listBlock = document.querySelector('.section-of-courage__container');
+  const handleScroll = () => {
+    if (listBlock && listBlock.getBoundingClientRect().top < 0) {
+      listBlock.style.backgroundPosition = `50% ${listBlock.getBoundingClientRect().top / 5}px`;
+    }
+  }
+
+  handleScroll();
   return (
     <ul className="section-of-courage__container">
       {buttonBlock}

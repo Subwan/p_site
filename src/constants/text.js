@@ -45,7 +45,7 @@ export const SECTION_OF_COUREAGE_BUTTONS = [
     position: 'left',
   },
   {
-    text: 'Ну чё ты, подкинь по братски, на пивас',
+    text: 'Ну чё ты, подкинь, по братски, на пивас',
     position: 'right',
   },
   {

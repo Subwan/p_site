@@ -1,7 +1,7 @@
 export const OPEN_PAGE_TEXT = 'ТЫ МОЛОДЕЦ';
 
 export const SECTION_OF_POWER_HEADER_TEXT = 'ТВОЁ РАЗВИТИЕ';
-export const SECTION_OF_POWER_TEXT = 'Давно скатились, но лучше никого нет.';
+export const SECTION_OF_POWER_TEXT = 'Мы давно скатились, но лучше никого нет.';
 
 export const SECTION_OF_COUREAGE_BUTTONS = [
   {
@@ -52,6 +52,13 @@ export const SECTION_OF_COUREAGE_BUTTONS = [
     text: 'Чё ты как',
     position: 'left',
   },
-]
+];
+
+export const YANDEX_PAYMENT_MODAL_TEXT = {
+  header: 'Ой, привет',
+  comment: 'Тут можешь оставить своё смешное послание',
+  sum: 'Сумма',
+  paymentType: 'Способ оплаты',
+}
 
 export const FOOTER_TEXT = 'Любимый паблик твоей мамы';

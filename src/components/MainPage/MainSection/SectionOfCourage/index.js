@@ -1,11 +1,29 @@
 import React from 'react';
 
 import { SECTION_OF_COUREAGE_BUTTONS } from '../../../../constants/text';
+import YandexPaymentModal from '../../../Modals/YandexPaymentModal'
 
 import './style.scss';
 
-const SectionOfCourage = (props) => {
-  const onEntry = (entry) => {
+class SectionOfCourage extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      modalVisible: false,
+    }
+
+    this.containerRef = React.createRef();
+  }
+
+  componentDidMount() {
+    const elements = document.querySelectorAll('.section-of-coureage__item-button');
+    elements.forEach((element) => {
+      this.observer.observe(element);
+    })
+  }
+
+
+  onEntry = (entry) => {
     entry.forEach(change => {
       if (change.isIntersecting) {
         change.target.style.webkitAnimationPlayState = "running";
@@ -13,19 +31,25 @@ const SectionOfCourage = (props) => {
     });
   }
 
-  const options = {
+  options = {
     threshold: 1,
   };
 
-  const observer = new IntersectionObserver(onEntry, options);
+  observer = new IntersectionObserver(this.onEntry, this.options);
 
-  const elements = document.querySelectorAll('.section-of-coureage__item-button');
+  openModal = () => {
+    this.setState({
+      modalVisible: true,
+    });
+  }
 
-  elements.forEach((element) => {
-    observer.observe(element);
-  })
+  closeModal = () => {
+    this.setState({
+      modalVisible: false,
+    });
+  }
 
-  const renderRow = (text, position = 'right') => (
+  renderRow = (text, position = 'right') => (
     <li
       key={text}
       className={
@@ -44,29 +68,35 @@ const SectionOfCourage = (props) => {
             : 'section-of-coureage__item-button_left-animation'
           }
         `}
+        onClick={() => this.openModal()}
       >
         {text}
       </button>
     </li>
   );
 
-  const buttonBlock = SECTION_OF_COUREAGE_BUTTONS.map(item => (
-    renderRow(item.text, item.position)
+  buttonBlock = SECTION_OF_COUREAGE_BUTTONS.map(item => (
+    this.renderRow(item.text, item.position)
   ));
 
-  const listBlock = document.querySelector('.section-of-courage__container');
-  const handleScroll = () => {
+  handleScroll = () => {
+    const listBlock = this.containerRef.current;
     if (listBlock && listBlock.getBoundingClientRect().top < 0) {
       listBlock.style.backgroundPosition = `50% ${listBlock.getBoundingClientRect().top / 5}px`;
     }
   }
 
-  handleScroll();
-  return (
-    <ul className="section-of-courage__container">
-      {buttonBlock}
-    </ul>
-  )
+  render() {
+    this.handleScroll();
+    return (
+      <>
+        <ul ref={this.containerRef} className="section-of-courage__container">
+          {this.buttonBlock}
+        </ul>
+        <YandexPaymentModal modalVisible={this.state.modalVisible} closeModal={() => this.closeModal()} />
+      </>
+    )
+  }
 }
 
 export default SectionOfCourage;

@@ -1,0 +1,165 @@
+$media-width: 1030px;
+$input-font-size: 18px;
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  width: 500px;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Lora', serif;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.25);
+}
+
+
+
+.modal__headaer {
+  font-size: 1vw;
+  margin: 0 0 1.5vw;
+  font-family: 'Playfair Display SC', serif;
+}
+
+.modal__label {
+  font-size: 0.8vw;
+  margin-bottom: 8px;
+  color: #616161;
+}
+
+
+.yandex-payment__container {
+  width: 90%;
+  height: 90%;
+
+  .yandex-modal-block {
+    margin-bottom: 1vw;
+  }
+
+  .yandex-payment__input {
+    border: 3px solid #000000;
+    padding-left: 8px;
+    font-family: 'Lora', serif;
+    font-size: $input-font-size;
+    line-height: 1;
+    box-sizing: border-box;
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  .yandex-payment__comment {
+    width: 100%;
+  }
+  
+  .yandex-payment__input-container {
+    font-size: $input-font-size;
+    text-align: center;
+    display: flex;
+    flex-flow: row nowrap;
+  }
+
+  .yandex-payment__sum {
+    margin-right: 8px;
+    width: 50%;
+  }
+
+  .yandex-modal-button-block {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .yandex-modal__button {
+      width: 40%;
+      height: 45px;
+      font-family: 'Lora', serif;
+      font-size: $input-font-size;
+      cursor: pointer;
+      border: 0;
+      padding: 0;
+
+      &:focus {
+        outline: 0;
+      }
+    }
+
+    .yandex-modal__approve-button {
+      background-color: #ffdb4d;
+
+      &:hover {
+        background-color: #fc0;
+      }
+    }
+
+    .yandex-modal__close-button {
+      background-color: #f33;
+
+      &:hover {
+        background-color: #c00;
+      }
+    }
+  }
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+@media screen and (max-width: $media-width) {
+  $input-font-size: 5vw;
+
+  .modal {
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .modal__headaer {
+    font-size: 7vw;
+    margin-bottom: 5vw;
+  }
+
+  .modal__label {
+    font-size: 4vw;
+  }
+
+  .yandex-payment__container {
+    .yandex-modal-block {
+      margin-bottom: 5vw;
+    }
+
+    .yandex-payment__input{
+      font-size: $input-font-size;
+      padding-left: 1vw;
+    }
+
+    .yandex-payment__input-container {
+      font-size: $input-font-size;
+    }
+  }
+
+  .yandex-modal-button-block {
+    .yandex-modal__button {
+      width: 40%;
+      height: 40px;
+      font-size: $input-font-size;
+    }
+  }
+}

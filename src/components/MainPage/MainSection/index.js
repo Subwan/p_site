@@ -48,7 +48,7 @@ class MainSection extends React.PureComponent {
           clientWidth={this.clientWidth}
           yOffset={this.state.yOffset}
         />
-        <SectionOfCourage />
+        <SectionOfCourage yOffset={this.state.yOffset} />
       </>
     );
   }
